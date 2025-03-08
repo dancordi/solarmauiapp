@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarMauiApp", "SolarMauiApp.csproj", "{8757090B-1C03-43F7-8A17-8105195EC810}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8757090B-1C03-43F7-8A17-8105195EC810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8757090B-1C03-43F7-8A17-8105195EC810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8757090B-1C03-43F7-8A17-8105195EC810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8757090B-1C03-43F7-8A17-8105195EC810}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D36C0FE-B5B7-4593-90FD-99CB2778F1FD}
+	EndGlobalSection
+EndGlobal
