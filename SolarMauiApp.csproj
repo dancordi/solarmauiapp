@@ -27,11 +27,11 @@
 		<ApplicationId>com.companyname.solarmauiapp</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.9.0</ApplicationDisplayVersion>
-		<ApplicationVersion>9</ApplicationVersion>
-		<Version>1.9.0</Version>
-		<FileVersion>1.9.0.0</FileVersion>
-		<AssemblyVersion>1.9.0.0</AssemblyVersion> 
+		<ApplicationDisplayVersion>1.9.1</ApplicationDisplayVersion>
+		<ApplicationVersion>10</ApplicationVersion>
+		<Version>1.9.1</Version>
+		<FileVersion>1.9.1.0</FileVersion>
+		<AssemblyVersion>1.9.1.0</AssemblyVersion> 
 
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
@@ -44,6 +44,7 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<UserSecretsId>4e4f1112-aecd-4257-a9b0-12b92329efcb</UserSecretsId>
+		<LangVersion>default</LangVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|AnyCPU'">
@@ -76,19 +77,6 @@
 		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.5" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="Views\MainPage.xaml">
-	    <SubType>Designer</SubType>
-	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Views\MainPage.xaml.cs">
-	    <DependentUpon>MainPage.xaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </Compile>
 	</ItemGroup>
 
 </Project>

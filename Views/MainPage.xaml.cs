@@ -7,23 +7,47 @@ namespace SolarMauiApp.Views
     {
         private readonly ISolarAzureFunctionsService _solarAzureFunctionsService;
         private readonly SettingsService _settingsService;
+        private bool _hasAppeared = false;
+
 
         public MainPage(ISolarAzureFunctionsService solarAzureFunctionsService,
-                        SettingsService settingsService)
+            SettingsService settingsService)
         {
             InitializeComponent();
 
             _solarAzureFunctionsService = solarAzureFunctionsService;
             _settingsService = settingsService;
             VersionLb.Text = System.Reflection.Assembly.GetExecutingAssembly()!.GetName()!.Version!.ToString();
+            
+            MyRefreshView.Command = new Command(async () => await RefreshInvertesPacAsync());
         }
         
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (_hasAppeared)
+                return;
+
+            _hasAppeared = true;
+
+            // Slight delay to ensure UI is rendered
+            await Task.Delay(100); // Tune this if needed
+
+            await RefreshInvertesPacAsync();
+        }
+
         private async void OnSettingsClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SettingsPage(_settingsService));
         }
 
         private async void OnRefreshClicked(object sender, EventArgs e)
+        {
+            await RefreshInvertesPacAsync();
+        }
+
+        private async Task RefreshInvertesPacAsync()
         {
             double totalPac = 0;
             this.ActivityIndicator.IsRunning = true;
@@ -57,6 +81,11 @@ namespace SolarMauiApp.Views
             {
                 this.Inverter2PacLb.Text = exception.Message;
             }
+            finally
+            {
+                MyRefreshView.IsRefreshing = false;
+            }
+
             this.InvertersPacLb.Text = $"Totale {totalPac} Watt";
             this.ActivityIndicator.IsRunning = false;
         }
