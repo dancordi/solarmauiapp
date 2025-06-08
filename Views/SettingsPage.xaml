@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolarMauiApp.Views.SettingsPage"
+             Title="Impostazioni">
+
+    <StackLayout Padding="20" Spacing="12">
+        <Label Text="BaseUrl" />
+        <Entry x:Name="BaseUrlEntry" />
+
+        <Label Text="API Key" />
+        <Entry x:Name="ApiKeyEntry" />
+
+        <Button Text="💾 Salva Impostazioni" Clicked="OnSaveClicked" />
+        <Label x:Name="StatusLabel" FontSize="Small" TextColor="Gray" />
+    </StackLayout>
+</ContentPage>

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+	
 	<PropertyGroup>
-		<TargetFrameworks>net9.0-android</TargetFrameworks>
+		<TargetFramework>net9.0-android</TargetFramework>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net9.0-tizen</TargetFrameworks> -->
@@ -27,11 +27,11 @@
 		<ApplicationId>com.companyname.solarmauiapp</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.9.0</ApplicationDisplayVersion>
-		<ApplicationVersion>9</ApplicationVersion>
-		<Version>1.9.0</Version>
-		<FileVersion>1.9.0.0</FileVersion>
-		<AssemblyVersion>1.9.0.0</AssemblyVersion> 
+		<ApplicationDisplayVersion>1.9.1</ApplicationDisplayVersion>
+		<ApplicationVersion>10</ApplicationVersion>
+		<Version>1.9.1</Version>
+		<FileVersion>1.9.1.0</FileVersion>
+		<AssemblyVersion>1.9.1.0</AssemblyVersion> 
 
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
@@ -44,6 +44,7 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<UserSecretsId>4e4f1112-aecd-4257-a9b0-12b92329efcb</UserSecretsId>
+		<LangVersion>default</LangVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|AnyCPU'">
@@ -71,17 +72,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.2" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.2" />
-		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.2" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.40" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.2" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Update="appsettings.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.5" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.5" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.5" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 	</ItemGroup>
 
 </Project>
