@@ -7,6 +7,15 @@
     Shell.FlyoutBehavior="Flyout"
     Title="SolarMauiApp">
 
+    <!-- Flyout Menu Items -->
+    <FlyoutItem Title="Home">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="⚙️ Impostazioni">
+        <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
+    </FlyoutItem>
+    
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"

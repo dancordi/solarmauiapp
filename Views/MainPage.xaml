@@ -67,8 +67,6 @@
                     FontSize="12"
                     HorizontalOptions="Center" />
 
-                <Button Text="⚙️ Apri Impostazioni" Clicked="OnSettingsClicked" />
-
             </VerticalStackLayout>
         </ScrollView>
     </RefreshView>
