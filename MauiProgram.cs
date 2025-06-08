@@ -10,9 +10,6 @@ public static class MauiProgram
 	{
 		var builder = MauiApp.CreateBuilder();
 
-		builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-							 .AddUserSecrets<MainPage>(optional: true, reloadOnChange: true);
-
         builder.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
@@ -24,9 +21,7 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-        //var configuration = builder.Configuration;
-        //builder.Services.AddSingleton<IConfiguration>(configuration);
-
+        builder.Services.AddSingleton<SettingsService>();
         builder.Services.AddSingleton<ISolarAzureFunctionsService, SolarAzureFunctionsService>();
         builder.Services.AddHttpClient();
 
