@@ -74,4 +74,4 @@ To run the project, use the following command:
 
 To publish the project for android, use the following command:
 
-`dotnet publish -c Release -f net9-android`
+`dotnet publish -publish -o ./publish -t:InstallAndroidDependencies -f net9.0-android -p:AndroidSdkDirectory=/home/<user>/Android/Sdk -p:AcceptAndroidSDKLicenses=true`

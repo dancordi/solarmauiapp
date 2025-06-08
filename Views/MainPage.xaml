@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolarMauiApp.Views.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="100"
+                HorizontalOptions="Center" />
+
+            <Label
+                x:Name="Inverter1PacLb"                
+                Text="Inverter EST 0 Watt"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Last update"
+                x:Name="Inverter1LastUpdateLb"                
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Inverter SUD 0 Watt"
+                x:Name="Inverter2PacLb"                
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Last update"
+                x:Name="Inverter2LastUpdateLb"                
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Totale 0 Watt"
+                x:Name="InvertersPacLb"                
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="RefreshBtn"
+                Text="Refresh"
+                Clicked="OnRefreshClicked"
+                HorizontalOptions="Center" />
+
+            <ActivityIndicator 
+                x:Name="ActivityIndicator"  
+                IsRunning="False" />
+
+            <Label
+                x:Name="VersionLb"                
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="12"
+                HorizontalOptions="Center" />
+            
+            <Button Text="⚙️ Apri Impostazioni" Clicked="OnSettingsClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
